@@ -1,5 +1,5 @@
 
-# 🚀 Projeto de Infraestrutura de TI: Gabe.lab
+# 🚀 Projeto de Infraestrutura de TI:
 
 ## 1. 📝 Visão Geral do Projeto
 
