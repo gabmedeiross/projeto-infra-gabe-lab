@@ -1,0 +1,55 @@
+# Plano de Endereçamento IP - Projeto Gabe.lab
+
+Este documento detalha a configuração de rede para cada dispositivo na infraestrutura do laboratório.
+
+---
+
+### 🌐 Roteador (`pfSense-FW`)
+
+#### Interface 1 (OPT1 - Lado dos Servidores)
+* **Rede:** Servidores
+* **IP:** `10.1.0.1`
+* **Máscara:** `255.255.255.0` (/24)
+
+#### Interface 2 (LAN - Lado dos Usuários)
+* **Rede:** Usuários
+* **IP:** `192.168.1.1`
+* **Máscara:** `255.255.255.0` (/24)
+* **Serviços nesta Interface:** Gateway para os clientes, Servidor DHCP e Resolvedor DNS.
+
+---
+
+### 👑 Controlador de Domínio (`DC-01`)
+
+* **Rede:** Servidores
+* **IP:** `10.1.0.10`
+* **Máscara:** `255.255.255.0` (/24)
+* **Gateway:** `10.1.0.1` (aponta para o pfSense)
+* **DNS:** `127.0.0.1` (aponta para si mesmo, melhor prática para DCs)
+
+---
+
+### 🗂️ Servidor de Arquivos (`FS-01`)
+
+* **Rede:** Servidores
+* **IP:** `10.1.0.20`
+* **Máscara:** `255.255.255.0` (/24)
+* **Gateway:** `10.1.0.1` (aponta para o pfSense)
+* **DNS:** `10.1.0.10` (aponta para o Controlador de Domínio)
+
+---
+
+### 🌍 Servidor Web (`WEB-01`)
+
+* **Rede:** Servidores
+* **IP:** `10.1.0.30`
+* **Máscara:** `255.255.255.0` (/24)
+* **Gateway:** `10.1.0.1` (aponta para o pfSense)
+* **DNS:** `10.1.0.10` (aponta para o Controlador de Domínio)
+
+---
+
+### 💻 Cliente (`CLIENT-01`)
+
+* **Rede:** Usuários
+* **Configuração de IP:** Tudo via **DHCP**, a ser fornecido pelo pfSense.
