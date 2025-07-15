@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Status do Servidor - Gabe.lab</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+        body { 
+            font-family: 'Roboto Mono', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1a1a1a;
+            color: #00ff41;
+        }
+        .status-box {
+            border: 2px solid #00ff41;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+            text-align: left;
+        }
+        .status-box h1 {
+            border-bottom: 1px solid #00ff41;
+            padding-bottom: 10px;
+        }
+        .status-box p {
+            margin: 10px 0;
+        }
+        strong {
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="status-box">
+        <h1>[ Status do Servidor WEB-01 ]</h1>
+        <p>> Servidor: <strong>Apache2</strong></p>
+        <p>> Sistema Operacional: <strong>Ubuntu 24.04 LTS</strong></p>
+        <p>> Rede: <strong>10.1.0.0/24 (Servidores)</strong></p>
+        <p>> Status: <strong style="color: #00ff41;">Online e Operacional</strong></p>
+    </div>
+</body>
+</html>
